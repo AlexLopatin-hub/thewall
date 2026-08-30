@@ -1,0 +1,22 @@
+package core_http_request
+
+import (
+	"encoding/json"
+	"fmt"
+	"net/http"
+
+	core_errors "github.com/AlexLopatin-hub/thewall/internal/core/errors"
+)
+
+// TODO: implement validation
+func DecodeAndValidateRequest(r *http.Request, dest any) error {
+	if err := json.NewDecoder(r.Body).Decode(&dest); err != nil {
+		return fmt.Errorf(
+			"decode json: %v, %w",
+			err,
+			core_errors.ErrInvalidArgument,
+		)
+	}
+
+	return nil
+}
