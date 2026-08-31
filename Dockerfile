@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY . .
 
-RUN go mod tidy && go build -o /app/exe cmd/the_wall/main.go
+RUN go mod tidy && \
+    go build -o /app/exe ./cmd/thewall/main.go
 
+EXPOSE 8080
 CMD [ "/app/exe" ]

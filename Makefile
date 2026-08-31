@@ -31,5 +31,7 @@ migrate-action:
 		"$(action)"
 
 thewall-run:
-	@go mod tidy && \
-	go run cmd/thewall/main.go
+	@docker compose up thewall-app
+
+thewall-stop:
+	@docker compose down thewall-app thewall-postgres
