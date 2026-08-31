@@ -15,6 +15,10 @@ type PostsRepository interface {
 		ctx context.Context,
 		post domain.Post,
 	) (domain.Post, error)
+
+	GetPosts(
+		ctx context.Context,
+	) ([]domain.Post, error)
 }
 
 func NewPostsService(
