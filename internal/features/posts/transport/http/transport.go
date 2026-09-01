@@ -16,6 +16,10 @@ type PostsService interface {
 		ctx context.Context,
 		post domain.Post,
 	) (domain.Post, error)
+
+	GetPosts(
+		ctx context.Context,
+	) ([]domain.Post, error)
 }
 
 func NewPostsHTTPHandler(
@@ -32,6 +36,11 @@ func (h *PostsHTTPHandler) Routes() []core_http_server.Route {
 			Method:  "POST",
 			Path:    "/posts",
 			Handler: h.CreatePost,
+		},
+		{
+			Method:  "GET",
+			Path:    "/posts",
+			Handler: h.GetPosts,
 		},
 	}
 }
