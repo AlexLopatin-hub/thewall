@@ -1,9 +1,9 @@
 <script setup>
-import HelloWorld from '@/components/HelloWorld.vue';
+import WallComponent from '@/components/WallComponent.vue';
 </script>
 
 <template>
   <main>
-    <HelloWorld />
+    <WallComponent />
   </main>
 </template>

@@ -1,12 +1,12 @@
 <script setup>
 // import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import WallComponent from './components/WallComponent.vue';
 </script>
 
 <template>
   <header>
     <div class="wrapper">
-      <HelloWorld />
+      <WallComponent />
 
       <!-- <nav>
         <RouterLink to="/">Home</RouterLink>
