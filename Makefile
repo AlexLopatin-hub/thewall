@@ -31,7 +31,10 @@ migrate-action:
 		"$(action)"
 
 thewall-run:
-	@docker compose up thewall-app
+	@docker compose up -d thewall-app
 
 thewall-stop:
-	@docker compose down thewall-app thewall-postgres
+	@docker compose down thewall-app thewall-postgres thewall-frontend
+
+frontend-start:
+	@docker compose up -d thewall-frontend --build
